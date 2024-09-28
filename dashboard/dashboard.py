@@ -5,7 +5,7 @@ import streamlit as st
 sns.set(style='dark')
 
 #Importing Data
-hour_df = pd.read_csv("cleaned_hour.csv")
+hour_df = pd.read_csv("https://raw.githubusercontent.com/galihw12/Dicoding-Project/refs/heads/main/dashboard/cleaned_hour.csv")
 
 #by year
 def create_by_year(hour_df):
