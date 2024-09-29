@@ -12,7 +12,6 @@ def create_by_year(hour_df):
     hour_by_year_df = hour_df.groupby(by='yr').agg({
           'casual': ['sum'],
           'registered': ['sum'],
-          'total_count': ['sum']
           })
     return hour_by_year_df
 
@@ -21,7 +20,6 @@ def create_by_season(hour_df):
     hour_by_season_df = hour_df.groupby(by='season').agg({
           'casual': ['sum'],
           'registered': ['sum'],
-          'total_count': ['sum']
           })
     return hour_by_season_df
 
@@ -30,7 +28,6 @@ def create_by_hr(hour_df):
     hour_by_hr_df = hour_df.groupby(by='hr').agg({
           'casual': ['sum'],
           'registered': ['sum'],
-          'total_count': ['sum']
           })
     return hour_by_hr_df
 
@@ -66,7 +63,7 @@ fig, ax = plt.subplots(figsize=(18, 10))
 
 hour_by_year_df.plot(kind='bar', ax=ax, width=0.8)
 
-ax.set_title('Yearly Casual Users, Registered Users, and Total Users of Bike Sharing', fontsize=30)
+ax.set_title('Yearly Casual and Registered Users of Bike Sharing', fontsize=30)
 ax.set_xlabel('Year', fontsize=20)
 ax.set_ylabel('Number of Users (in Millions)', fontsize=20)
 ax.tick_params(axis='y', labelsize=20)
@@ -90,7 +87,7 @@ fig, ax = plt.subplots(figsize=(18, 10))
 
 hour_by_season_df.plot(kind='line', marker='o', ax=ax, markersize=16, linewidth=8)
 
-ax.set_title('Seasonal Casual Users, Registered Users, and Total Users of Bike Sharing', fontsize=30)
+ax.set_title('Seasonal Casual and Registered Users of Bike Sharing', fontsize=30)
 ax.set_xlabel('Season', fontsize=20)
 ax.set_ylabel('Number of Users (in Millions)', fontsize=20)
 ax.tick_params(axis='y', labelsize=20)
@@ -112,7 +109,7 @@ fig, ax = plt.subplots(figsize=(18, 10))
 
 hour_by_hr_df.plot(kind='line', marker='o', ax=ax, markersize=10, linewidth=3)
 
-ax.set_title('Hourly Casual Users, Registered Users, and Total Users of Bike Sharing', fontsize=30)
+ax.set_title('Hourly Casual and Registered Users of Bike Sharing', fontsize=30)
 ax.set_xlabel('Hour', fontsize=20)
 ax.set_ylabel('Number of Users (in Millions)', fontsize=20)
 ax.tick_params(axis='y', labelsize=20)
@@ -140,7 +137,7 @@ sum_values_df = pd.DataFrame(list(values.items()), columns=['Category', 'Value']
 st.title('Total Number of Bike Sharing Users Based on Type of Day')
 
 plt.figure(figsize=(10, 8))
-plt.pie(values_df['Value'], labels=values_df['Category'], autopct='%1.1f%%', textprops={'fontsize': 20})
+plt.pie(sum_values_df['Value'], labels=sum_values_df['Category'], autopct='%1.1f%%', textprops={'fontsize': 20})
 
 plt.axis('equal')
 
@@ -155,12 +152,12 @@ avg_values = {
     'holiday in workingday': main_df[main_df['holiday_in_workingday']]['total_count'].mean()
 }
 
-sum_values_df = pd.DataFrame(list(values.items()), columns=['Category', 'Value'])
+avg_values_df = pd.DataFrame(list(values.items()), columns=['Category', 'Value'])
 
 st.title('Average Number of Bike Sharing Users Based on Type of Day')
 
 plt.figure(figsize=(10, 8))
-plt.pie(values_df['Value'], labels=values_df['Category'], autopct='%1.1f%%', textprops={'fontsize': 20})
+plt.pie(avg_values_df['Value'], labels=avg_values_df['Category'], autopct='%1.1f%%', textprops={'fontsize': 20})
 
 plt.axis('equal')
 
