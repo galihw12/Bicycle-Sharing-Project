@@ -7,6 +7,10 @@ sns.set(style='dark')
 #Importing Data
 hour_df = pd.read_csv("https://raw.githubusercontent.com/galihw12/Dicoding-Project/refs/heads/main/dashboard/cleaned_hour.csv")
 
+#Ordering Season from SPring to WInter
+season_order = ['Spring', 'Summer', 'Fall', 'Winter']
+hour_df['season'] = pd.Categorical(hour_df['season'], categories=season_order, ordered=True)
+
 #by year
 def create_by_year(hour_df):
     hour_by_year_df = hour_df.groupby(by='yr').agg({
@@ -84,7 +88,6 @@ st.pyplot(fig)
 st.title('Seasonal Users of Bike Sharing')
 
 fig, ax = plt.subplots(figsize=(18, 10))
-
 hour_by_season_df.plot(kind='line', marker='o', ax=ax, markersize=16, linewidth=8)
 
 ax.set_title('Seasonal Casual and Registered Users of Bike Sharing', fontsize=30)
