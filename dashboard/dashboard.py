@@ -180,4 +180,4 @@ ax3.set(title="Correlation Between Normalized Windspeed and Number of Users")
 
 plt.tight_layout()
 
-st.pyplot(plt)
+st.pyplot(fig)
