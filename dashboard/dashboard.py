@@ -132,7 +132,7 @@ sum_values = {
     'holiday in workingday': main_df[main_df['holiday_in_workingday']]['total_count'].sum()
 }
 
-sum_values_df = pd.DataFrame(list(values.items()), columns=['Category', 'Value'])
+sum_values_df = pd.DataFrame(list(sum_values.items()), columns=['Category', 'Value'])
 
 st.title('Total Number of Bike Sharing Users Based on Type of Day')
 
@@ -152,7 +152,7 @@ avg_values = {
     'holiday in workingday': main_df[main_df['holiday_in_workingday']]['total_count'].mean()
 }
 
-avg_values_df = pd.DataFrame(list(values.items()), columns=['Category', 'Value'])
+avg_values_df = pd.DataFrame(list(avg_values.items()), columns=['Category', 'Value'])
 
 st.title('Average Number of Bike Sharing Users Based on Type of Day')
 
