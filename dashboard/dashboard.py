@@ -141,7 +141,7 @@ plt.pie(sum_values_df['Value'], labels=sum_values_df['Category'], autopct='%1.1f
 
 plt.axis('equal')
 
-plt.title('Bike Sharing Users Based on Type of Day', fontsize=25)
+plt.title('Total Number of Bike Sharing Users Based on Type of Day', fontsize=25)
 
 st.pyplot(plt)
 
@@ -161,9 +161,7 @@ plt.pie(avg_values_df['Value'], labels=avg_values_df['Category'], autopct='%1.1f
 
 plt.axis('equal')
 
-plt.title('Bike Sharing Users Based on Type of Day', fontsize=25)
-
-st.pyplot(plt)
+plt.title('Average Number of Bike Sharing Users Based on Type of Day', fontsize=25)
 
 #Correlation
 st.title('Correlation Between Normalized Temperature, Normalized Humidity, and Normalized Windspeed with Number of Users')
@@ -179,7 +177,3 @@ sns.regplot(x=main_df['windspeed'], y=main_df['total_count'], ax=ax3, color='gre
 ax3.set(title="Correlation Between Normalized Windspeed and Number of Users")
 
 plt.tight_layout()
-
-st.pyplot(plt)
-
-
