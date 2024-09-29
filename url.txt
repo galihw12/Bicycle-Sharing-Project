@@ -1,1 +1,1 @@
-https://bicycle-dicoding-project.streamlit.app/
+https://bicycle-sharing-project.streamlit.app/
