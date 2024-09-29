@@ -128,15 +128,36 @@ st.pyplot(fig)
 main_df['holiday_in_workingday'] = main_df['holiday'] & ~main_df['day_name'].isin(['Sat', 'Sun'])
 main_df['weekend'] = main_df['day_name'].isin(['Sat', 'Sun'])
 
-values = {
+#Sum
+sum_values = {
     'working day': main_df[main_df['workingday']]['total_count'].sum(),
     'weekend': main_df[main_df['weekend']]['total_count'].sum(),
     'holiday in workingday': main_df[main_df['holiday_in_workingday']]['total_count'].sum()
 }
 
-values_df = pd.DataFrame(list(values.items()), columns=['Category', 'Value'])
+sum_values_df = pd.DataFrame(list(values.items()), columns=['Category', 'Value'])
 
-st.title('Bike Sharing Users Based on Type of Day')
+st.title('Total Number of Bike Sharing Users Based on Type of Day')
+
+plt.figure(figsize=(10, 8))
+plt.pie(values_df['Value'], labels=values_df['Category'], autopct='%1.1f%%', textprops={'fontsize': 20})
+
+plt.axis('equal')
+
+plt.title('Bike Sharing Users Based on Type of Day', fontsize=25)
+
+st.pyplot(plt)
+
+#Average
+avg_values = {
+    'working day': main_df[main_df['workingday']]['total_count'].mean(),
+    'weekend': main_df[main_df['weekend']]['total_count'].mean(),
+    'holiday in workingday': main_df[main_df['holiday_in_workingday']]['total_count'].mean()
+}
+
+sum_values_df = pd.DataFrame(list(values.items()), columns=['Category', 'Value'])
+
+st.title('Average Number of Bike Sharing Users Based on Type of Day')
 
 plt.figure(figsize=(10, 8))
 plt.pie(values_df['Value'], labels=values_df['Category'], autopct='%1.1f%%', textprops={'fontsize': 20})
