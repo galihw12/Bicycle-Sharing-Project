@@ -7,7 +7,7 @@ sns.set(style='dark')
 #Importing Data
 hour_df = pd.read_csv("https://raw.githubusercontent.com/galihw12/Dicoding-Project/refs/heads/main/dashboard/cleaned_hour.csv")
 
-#Ordering Season from SPring to WInter
+#Ordering Season from Spring to Winter
 season_order = ['Spring', 'Summer', 'Fall', 'Winter']
 hour_df['season'] = pd.Categorical(hour_df['season'], categories=season_order, ordered=True)
 
