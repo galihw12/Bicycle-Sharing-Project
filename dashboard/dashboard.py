@@ -163,6 +163,8 @@ plt.axis('equal')
 
 plt.title('Average Number of Bike Sharing Users Based on Type of Day', fontsize=25)
 
+st.pyplot(plt)
+
 #Correlation
 st.title('Correlation Between Normalized Temperature, Normalized Humidity, and Normalized Windspeed with Number of Users')
 fig, (ax1, ax2, ax3) = plt.subplots(nrows=3, figsize=(13, 10))
@@ -177,3 +179,5 @@ sns.regplot(x=main_df['windspeed'], y=main_df['total_count'], ax=ax3, color='gre
 ax3.set(title="Correlation Between Normalized Windspeed and Number of Users")
 
 plt.tight_layout()
+
+st.pyplot(plt)
