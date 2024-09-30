@@ -140,7 +140,7 @@ sum_values_df = pd.DataFrame(list(sum_values.items()), columns=['Category', 'Val
 st.title('Total Number of Bike Sharing Users Based on Type of Day')
 
 plt.figure(figsize=(10, 8))
-plt.pie(sum_values_df['Value'], labels=sum_values_df['Category'], autopct='%1.1f%%', colors=['#0B6477','#14919B', '#DAD1CB'], textprops={'fontsize': 20})
+plt.pie(sum_values_df['Value'], labels=sum_values_df['Category'], autopct='%1.1f%%', colors=['#0B6477','#14919B', '#0AD1C8'], textprops={'fontsize': 20})
 
 plt.axis('equal')
 
@@ -160,7 +160,7 @@ avg_values_df = pd.DataFrame(list(avg_values.items()), columns=['Category', 'Val
 st.title('Average Number of Bike Sharing Users Based on Type of Day')
 
 plt.figure(figsize=(10, 8))
-plt.pie(avg_values_df['Value'], labels=avg_values_df['Category'], autopct='%1.1f%%', colors=['#0B6477','#14919B', '#DAD1CB'], textprops={'fontsize': 20})
+plt.pie(avg_values_df['Value'], labels=avg_values_df['Category'], autopct='%1.1f%%', colors=['#0B6477','#14919B', '#0AD1C8'], textprops={'fontsize': 20})
 
 plt.axis('equal')
 
