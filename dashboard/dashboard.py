@@ -92,7 +92,7 @@ hour_by_season_df.plot(kind='line', marker='o', ax=ax, markersize=16, linewidth=
 
 ax.set_title('Seasonal Casual and Registered Users of Bike Sharing', fontsize=30)
 ax.set_xlabel('Season', fontsize=20)
-ax.set_ylabel('Number of Users (in Millions)', fontsize=20)
+ax.set_ylabel('Number of Users', fontsize=20)
 ax.tick_params(axis='y', labelsize=20)
 ax.tick_params(axis='x', labelsize=20)
 ax.legend(fontsize=20)
@@ -114,7 +114,7 @@ hour_by_hr_df.plot(kind='line', marker='o', ax=ax, markersize=10, linewidth=3)
 
 ax.set_title('Hourly Casual and Registered Users of Bike Sharing', fontsize=30)
 ax.set_xlabel('Hour', fontsize=20)
-ax.set_ylabel('Number of Users (in Millions)', fontsize=20)
+ax.set_ylabel('Number of Users', fontsize=20)
 ax.tick_params(axis='y', labelsize=20)
 ax.tick_params(axis='x', labelsize=20)
 ax.legend(fontsize=20)
