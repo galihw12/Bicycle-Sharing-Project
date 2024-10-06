@@ -1,5 +1,7 @@
 # Bike Sharing Dashboard ✨
-
+```
+Data wrangling and EDA process can be seen at notebook.ipynb
+```
 ## Setup Environment - Anaconda
 ```
 conda create --name main-ds python=3.9
